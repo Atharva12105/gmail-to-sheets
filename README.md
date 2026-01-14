@@ -104,13 +104,14 @@ gmail-to-sheets/
 ```python
 if msg["id"] in processed:
  continue
+```
 
 State Persistence Method
 	•	Processed message IDs are stored in state.json
 	•	File is read at startup
 	•	Updated after execution
 	•	Ensures idempotent execution
-[
+	[
   "18c9f8e9d9a3b7a1",
   "18c9f8e9d9a3b7a2"
 ]
@@ -125,9 +126,5 @@ Limitations
 	•	OAuth app is in testing mode
 	•	Sheet grows indefinitely
 	•	Not suitable for public multi-user use
-
-Proof of Execution
-Screenshots and a demo video are available in the proof/ folder.
-Note: GitHub preview may not play audio. Please download the video.
 
 
