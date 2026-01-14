@@ -55,6 +55,24 @@ gmail-to-sheets/
 - Gmail API enabled
 - Google Sheets API enabled
 
+1️⃣ Install Python
+	•	Install Python 3.9 or higher
+	•	Verify installation:
+	    python --version
+2️⃣ Clone the Repository
+    git clone <your-repository-url>
+    cd gmail-to-sheets
+	
+3️⃣ Create a Virtual Environment
+   python3 -m venv venv
+   source venv/bin/activate
+
+4️⃣ Install Required Dependencies
+Install all required Python packages using requirements.txt:
+pip install -r requirements.txt
+
+Creating a virtual environment ensures dependencies are isolated.
+
 ---
 
 ### Configure Google Cloud
