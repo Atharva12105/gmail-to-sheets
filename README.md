@@ -59,7 +59,7 @@ Diagram:(Textual Architecture)
 
 
 
-2.Step-by-Step Setup Instructions
+2️⃣ Step-by-Step Setup Instructions
 
 Prerequisites
 	•	Python 3.9 or higher
@@ -67,9 +67,9 @@ Prerequisites
 	•	Google Cloud Project
 	•	Gmail API enabled
 	•	Google Sheets API enabled
-
-Step 1: Clone Repository
-git clone <repo-url>
+	
+Step 1: Clone the Repository
+git clone <your-repository-url>
 cd gmail-to-sheets
 
 Step 2: Create Virtual Environment
@@ -84,29 +84,27 @@ Step 4: Configure Google Cloud
 	2.	Enable the following APIs:
 	•	Gmail API
 	•	Google Sheets API
-	3.	Create an OAuth 2.0 Client ID and select Desktop App as the application type.
-	4.	Download the generated credentials.json file.
-	5.	Place the file inside the project directory:
-	    credentials/credentials.json
+	3.	Create an OAuth 2.0 Client ID.
+	•	Application type: Desktop App
+	4.	Download the credentials.json file.
+	5.	Place it inside:credentials/credentials.json
 
 Step 5: Configure Google Sheet
+	•	Create a Google Sheet.
+	•	Add the following headers in the first row:
+	•	From
+	•	Subject
+	•	Date
+	•	Content
+	•	Copy the Spreadsheet ID from the URL.
+	•	Update config.py with:
+	•	Spreadsheet ID
+	•	Sheet name
 
-- Create a Google Sheet
-- Add headers in row 1:
-  - From
-  - Subject
-  - Date
-  - Content
-- Copy the Spreadsheet ID from the URL
-- Update `config.py` with the Sheet ID and name
-
-Step 6: Run the Script
-        python -m src.main
-        
-        On first run:
-	•	Browser opens for OAuth login
-	•	Token is saved locally
-	•	Emails are processed
+Step 6: Run the Script:- python -m src.main
+      	•	Browser opens for OAuth consent on first run
+	    •	Token is stored locally
+	    •	Emails are fetched and logged
 
 3. Design Explanations
 
