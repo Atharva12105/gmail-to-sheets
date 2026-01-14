@@ -60,7 +60,7 @@ gmail-to-sheets/
 	•	Verify installation:
 	    python --version
 2️⃣ Clone the Repository
-    git clone <your-repository-url>
+    git clone https://github.com/Atharva12105/gmail-to-sheets.git
     cd gmail-to-sheets
 	
 3️⃣ Create a Virtual Environment
