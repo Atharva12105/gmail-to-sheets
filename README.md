@@ -1,6 +1,6 @@
 Name:Atharva Ravindra Kale
 
-## Architecture Diagram
+1.## Architecture Diagram
 ![Architecture Diagram](Architecture.png)
 
 Diagram:(Textual Architecture)
@@ -59,7 +59,7 @@ Diagram:(Textual Architecture)
 
 
 
-2️.Step-by-Step Setup Instructions
+2.Step-by-Step Setup Instructions
 
 Prerequisites
 	•	Python 3.9+
@@ -103,14 +103,14 @@ Step 6: Run the Script
 	•	Token is saved locally
 	•	Emails are processed
 
-3️.Design Explanations
+3.Design Explanations
 
 OAuth Flow Used
-	•	Uses OAuth 2.0 Installed App Flow
-	•	User grants permission via browser
-	•	Access & refresh tokens are stored in token.json
-	•	Tokens are reused on subsequent runs without re-login
-	•	No service accounts are used
+•	Uses OAuth 2.0 Installed App Flow
+•	User grants permission via browser
+•	Access & refresh tokens are stored in token.json
+•	Tokens are reused on subsequent runs without re-login
+•	No service accounts are used
 
 ⸻
 
@@ -133,7 +133,7 @@ State Persistence Method
       "18c9f8e9d9a3b7a2"
     ]
 
-4️. Challenges Faced & Solutions
+4. Challenges Faced & Solutions
 
 Challenge: Duplicate emails being processed on re-run
 
@@ -166,7 +166,7 @@ Added the Gmail account as a Test User in OAuth consent screen.
 
 ⸻
 
-5️. Limitations of the Solution
+5. Limitations of the Solution
 	•	Designed for single-user execution
 	•	Requires the system to be powered on for cron scheduling
 	•	Google OAuth app is in testing mode
