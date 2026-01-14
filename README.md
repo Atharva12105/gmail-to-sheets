@@ -116,15 +116,28 @@ State Persistence Method
   "18c9f8e9d9a3b7a2"
 ]
 
-Challenges Faced
-Problem: Duplicate emails on re-run
-Solution: Used Gmail message IDs and persisted them in state.json
+## Challenges Faced
 
-Limitations
-	•	Single-user execution
-	•	System must be powered on for cron jobs
-	•	OAuth app is in testing mode
-	•	Sheet grows indefinitely
-	•	Not suitable for public multi-user use
+### Problem: Duplicate emails on re-run
+**Solution:**  
+Used Gmail message IDs and persisted them in `state.json` to skip already processed emails.
+
+---
+
+## Limitations
+
+- Single-user execution
+- System must be powered on for cron jobs
+- OAuth app is in testing mode
+- Sheet grows indefinitely
+- Not suitable for public multi-user use
+
+---
+
+## Proof of Execution
+
+Screenshots and a demo video are available in the `proof/` folder.
+
+> **Note:** GitHub preview may not play audio. Please download the video to hear the explanation.
 
 
