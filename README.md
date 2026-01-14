@@ -89,11 +89,15 @@ Step 4: Configure Google Cloud
         credentials/credentials.json
 
 Step 5: Configure Google Sheet
-	•	Create a Google Sheet
-	•	Add headers in row 1:
-        From | Subject | Date | Content
-    •	Copy the Spreadsheet ID
-	•	Update config.py
+
+- Create a Google Sheet
+- Add headers in row 1:
+  - From
+  - Subject
+  - Date
+  - Content
+- Copy the Spreadsheet ID from the URL
+- Update `config.py` with the Sheet ID and name
 
 Step 6: Run the Script
         python -m src.main
