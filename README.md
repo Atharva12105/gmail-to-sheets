@@ -1,58 +1,62 @@
 Name:Atharva Ravindra Kale
 
-Diagram:
-+---------------------+
-|      User           |
-| (Gmail Account)     |
-+----------+----------+
-           |
-           | OAuth 2.0 Authentication
-           |
-+----------v----------+
-| Google OAuth        |
-| Consent Screen      |
-+----------+----------+
-           |
-           | Access Token (token.json)
-           |
-+----------v----------+
-| Python Script       |
-| (src/main.py)       |
-+----------+----------+
-           |
-           | Fetch unread emails
-           |
-+----------v----------+
-| Gmail API           |
-| (Inbox, Unread)     |
-+----------+----------+
-           |
-           | Email ID, headers, body
-           |
-+----------v----------+
-| Email Parser        |
+## Architecture Diagram
+![Architecture Diagram](Architecture.png)
+
+Diagram:(Textual Architecture)
++———————+
+|        User         |
+|   (Gmail Account)   |
++–––––+–––––+
+|
+| OAuth 2.0 Authentication
+|
++–––––v–––––+
+|     Google OAuth    |
+|   Consent Screen    |
++–––––+–––––+
+|
+| Access Token (token.json)
+|
++–––––v–––––+
+|    Python Script    |
+|   (src/main.py)     |
++–––––+–––––+
+|
+| Fetch unread emails
+|
++–––––v–––––+
+|      Gmail API      |
+|  (Inbox, Unread)    |
++–––––+–––––+
+|
+| Email ID, headers, body
+|
++–––––v–––––+
+|    Email Parser     |
 | (email_parser.py)  |
-+----------+----------+
-           |
-           | From, Subject, Date, Content
-           |
-+----------v----------+
-| Duplicate Check     |
-| (state.json)        |
-+----------+----------+
-           |
-           | New emails only
-           |
-+----------v----------+
++–––––+–––––+
+|
+| From, Subject, Date, Content
+|
++–––––v–––––+
+|   Duplicate Check   |
+|    (state.json)     |
++–––––+–––––+
+|
+| New emails only
+|
++–––––v–––––+
 | Google Sheets API   |
-| (Append Rows)       |
-+----------+----------+
-           |
-           | Stored as rows
-           |
-+----------v----------+
-| Google Sheet        |
-+---------------------+
+|   (Append Rows)     |
++–––––+–––––+
+|
+| Stored as rows
+|
++–––––v–––––+
+|    Google Sheet     |
++———————+
+
 
 
 2️.Step-by-Step Setup Instructions
