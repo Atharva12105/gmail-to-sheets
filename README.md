@@ -62,10 +62,11 @@ Diagram:(Textual Architecture)
 2.Step-by-Step Setup Instructions
 
 Prerequisites
-	•	Python 3.9+
+	•	Python 3.9 or higher
 	•	Google account
 	•	Google Cloud Project
-	•	Gmail & Google Sheets APIs enabled
+	•	Gmail API enabled
+	•	Google Sheets API enabled
 
 Step 1: Clone Repository
 git clone <repo-url>
@@ -79,14 +80,14 @@ Step 3: Install Dependencies
 pip install -r requirements.txt
 
 Step 4: Configure Google Cloud
-	1.	Create a Google Cloud project
-	2.	Enable:
+	1.	Create a Google Cloud project.
+	2.	Enable the following APIs:
 	•	Gmail API
 	•	Google Sheets API
-	3.	Create OAuth 2.0 Client (Desktop App)
-	4.	Download credentials.json
-	5.	Place it inside:
-        credentials/credentials.json
+	3.	Create an OAuth 2.0 Client ID and select Desktop App as the application type.
+	4.	Download the generated credentials.json file.
+	5.	Place the file inside the project directory:
+	    credentials/credentials.json
 
 Step 5: Configure Google Sheet
 
@@ -107,14 +108,14 @@ Step 6: Run the Script
 	•	Token is saved locally
 	•	Emails are processed
 
-3.Design Explanations
+3. Design Explanations
 
-OAuth Flow Used
-•	Uses OAuth 2.0 Installed App Flow
-•	User grants permission via browser
-•	Access & refresh tokens are stored in token.json
-•	Tokens are reused on subsequent runs without re-login
-•	No service accounts are used
+🔐 OAuth Flow Used
+	•	Uses OAuth 2.0 Installed App Flow
+	•	User grants permission via browser on first run
+	•	Access and refresh tokens are stored locally in token.json
+	•	Tokens are reused on subsequent executions without re-login
+	•	No service accounts are used
 
 ⸻
 
@@ -126,16 +127,18 @@ Duplicate Prevention Logic
         if msg["id"] in processed:
              continue
 
-State Persistence Method
-	•	Processed message IDs are stored in state.json
-	•	This file is read at startup and updated after execution
-	•	Ensures idempotent execution
+🗂️ State Persistence Method
+	•	Processed Gmail message IDs are stored in state.json
+	•	This file is read at script startup
+	•	It is updated after each successful execution
+	•	Ensures idempotent execution, meaning the script can be safely run multiple times
+	
+	[
+  "18c9f8e9d9a3b7a1",
+  "18c9f8e9d9a3b7a2"
+]
 
-    Example:
-    [
-      "18c9f8e9d9a3b7a1",
-      "18c9f8e9d9a3b7a2"
-    ]
+   
 
 4. Challenges Faced & Solutions
 
@@ -170,9 +173,9 @@ Added the Gmail account as a Test User in OAuth consent screen.
 
 ⸻
 
-5. Limitations of the Solution
+5.Limitations of the Solution
 	•	Designed for single-user execution
-	•	Requires the system to be powered on for cron scheduling
-	•	Google OAuth app is in testing mode
-	•	Sheet grows indefinitely without archival
-	•	Not suitable for public multi-user usage without verification
+	•	Requires the system to be powered on and awake for cron-based scheduling
+	•	Google OAuth application remains in testing mode
+	•	Google Sheet grows indefinitely without automatic archival
+	•	Not suitable for public multi-user usage without OAuth verification
